@@ -7,10 +7,21 @@ import Home from './components/pages/Home/Home';
 import Cart from './components/pages/Cart/Cart';
 import SingleProduct from "./components/pages/SingleProduct/SingleProduct";
 import OrderPage from './components/pages/OrderPage/OrderPage.js';
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchProducts } from "./redux/productsRedux.js";
 
 
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect( 
+    () => {
+      dispatch(fetchProducts());
+    }
+  ,[dispatch] );
+
   return (
     <Container>
       <Header />
