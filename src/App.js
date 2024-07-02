@@ -1,9 +1,28 @@
+import { Container } from "react-bootstrap";
+import Header from "./components/views/Header/Header";
+import Footer from './components/views/Footer/Footer';
+import { Routes, Route } from "react-router-dom";
+import NotFound from './components/pages/NotFound/NotFound';
+import Home from './components/pages/Home/Home';
+import Cart from './components/pages/Cart/Cart';
+import SingleProduct from "./components/pages/SingleProduct/SingleProduct";
+import OrderPage from './components/pages/OrderPage/OrderPage.js';
+
+
 
 const App = () => {
   return (
-    <div className="App">
-      test click
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/product/:id" element={ <SingleProduct />} />
+        <Route path="/cart" element={ <Cart/> } />
+        <Route path="/order" element={ <OrderPage /> } />
+        <Route path="/*" element={ <NotFound /> } />
+      </Routes>
+      <Footer />
+    </Container>
   );
 }
 
