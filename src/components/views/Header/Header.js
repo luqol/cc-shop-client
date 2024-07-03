@@ -1,8 +1,13 @@
+import Hero from "../Hero/Hero";
+import NavBar from "../NavBar/NavBar";
 
 
 const Header = () => {
     return(
-      <h2>header</h2>
+      <main>
+        <NavBar />
+        <Hero />
+      </main>
     );
   };
   

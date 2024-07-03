@@ -1,0 +1,46 @@
+@import '../../../styles/settings.scss';
+
+nav{
+  background: darken($color-dark, 3%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+    margin-left: 3%;
+    font-size: 1.25 * $base-size;
+    a{
+        text-decoration: none;
+        color: $color-light;
+        font-weight: bold;
+    }
+
+}
+
+.menu{
+    margin-right: 3%;
+    font-size: 1.25 * $base-size;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        li{
+            display: inline-block;
+            padding: 20px 15px;
+            &:hover{
+                background: lighten($color-dark,  10%);
+            }
+        }
+        a{
+            text-decoration: none;
+            color: $color-light;
+            font-weight: bold;
+            &.linkActive{
+                color: $color-warning;
+              }
+        }
+    }
+
+}
+
+

@@ -1,7 +1,10 @@
+import styles from './Footer.module.scss'
+
+
 const Footer = () => {
     return(
       <footer className="mt-3">
-        <p className="text-center text-muted m-0">Copyright &copy; ClickCraft 2024</p>
+        <p className={styles.footer}>Copyright &copy; ClickCraft 2024</p>
       </footer>
     );
   };
