@@ -1,0 +1,62 @@
+@import '../../../styles/settings.scss';
+div .product {
+    display: flex;
+    width: 50%;
+    margin: $base-size auto;
+    background-color: $color-light;
+    border: 1px solid $color-dark;
+    border-radius: $radius;
+    padding: $base-size;
+    transition: $transition;
+    font-family: $font-text;
+
+    @media (max-width: 768px) {
+        width: 70%; 
+    }
+
+    @media (max-width: 576px) {
+        width: 90%; 
+    }
+
+}
+
+.imgContainer {
+    flex: 0 0 150px; 
+    height: 150px; 
+    overflow: hidden;
+    .img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius;
+    }
+}
+
+.body {
+    padding: 0 $base-size;
+    text-align: left;
+    flex: 1;
+    margin-left: 0 $base-size;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+        font-size: 1.5em;
+        color: $color-dark;
+        margin: $base-size 0;
+    }
+    
+    .price {
+        font-size: 1.2em;
+        color: $color-success;
+    }
+    
+    .buttonContainer{
+        display: flex;
+        margin-top: auto;
+        justify-content: center;
+        button{
+            margin-top: $base-size;
+        }
+    }
+}
+

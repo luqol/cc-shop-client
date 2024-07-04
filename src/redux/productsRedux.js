@@ -1,7 +1,7 @@
 import { API_URL } from '../config';
 
 //selectors
-export const getAllProduct = state => state.products;
+export const getAllProducts = state => state.products;
 export const getProductById = ({products}, productId) => products.find( product => product.id === productId);
 
 //actions
