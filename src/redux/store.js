@@ -2,11 +2,13 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import initialState from './initState';
 import { thunk } from "redux-thunk";
 import productsReducer from "./productsRedux";
+import cartReducer from "./cartRedux";
 
 
 
 const subreducers = {
     products: productsReducer,
+    cart: cartReducer,
 };
 
 const reducer = combineReducers(subreducers);

@@ -1,19 +1,22 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './SpForm.module.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import Button from '../../common/Button/Button';
-import { useState } from 'react';
+import { useState} from 'react';
 import Image from '../../common/image/Image';
 import Quantity from '../../common/Quantity/Quantity';
+import { addProduct, getCartProductById, updateProduct } from '../../../redux/cartRedux';
 
 
 const SpForm = () => {
 
     const { id } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const product = useSelector(state => getProductById(state, id));
+    const p = useSelector(state => getCartProductById(state, product.id))
 
     const [mainImg, setMainImg] = useState(product.images[0].img);
     const [price, setPrice] = useState(product.price);
@@ -46,9 +49,18 @@ const SpForm = () => {
     const addToCart = (e) => {
         e.preventDefault();
         console.log('Add to cart');
-
-
-        //navigate('/cart')
+        const newProduct = {
+            id: product.id,
+            name: product.name,
+            quantity: quantity,
+        }
+        
+        if (!p) 
+            dispatch(addProduct(newProduct));
+        else {
+            dispatch(updateProduct(newProduct));
+        }
+        navigate('/cart')
     }
 
     return(

@@ -14,7 +14,7 @@ const Quantity = ({plusAction, minusAction, quantity}) => {
 };
 
 Quantity.propTypes = {
-    plusAction: PropTypes.node.isRequired,
+    plusAction: PropTypes.func.isRequired,
     minusAction: PropTypes.func.isRequired,
     quantity: PropTypes.number.isRequired,
 };
