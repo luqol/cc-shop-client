@@ -1,8 +1,70 @@
+@import '../../../styles/settings.scss';
 
 .spForm{
     display: flex;
     width: 70%;
     margin: auto;
     flex-direction: column;
+
+    .header{
+        margin-bottom: 20px;
+    }
+    .imgesContainer{
+        display: flex;
+        margin-bottom: 20px;
+        .mainImgContainer{
+            flex: 50%;
+            margin-right: 20px;
+            .imgContainer{
+                width: 100%;
+            }
+        }
+        .otherImgContainer{
+            flex: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            .imgContainer{
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .description{
+        margin-bottom: 20px;
+    }
+
+    .addToCartContainer{
+        .totalPrice{
+            .price{
+                font-size: 1.5*$base-size;
+            }
+        }
+        .quantityContainer{
+            margin-bottom: 10px;
+            .quantity{
+                font-size: 1.5*$base-size;
+                .plusminusBtn{
+                    background: $color-success;
+                    border: 0;
+                    color: $color-light;
+                    font-weight: 700;
+                    border-radius: $radius;
+                    transition: $transition;
+                    margin: $half-size;
+                    &:hover {
+                        background: darken($color-success, 10%);
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+
+
+
 
 }
