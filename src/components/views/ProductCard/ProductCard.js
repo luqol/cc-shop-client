@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import styles from './ProductCard.module.scss';
-import { IMG_URL } from '../../../config';
 import Button from '../../common/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import Image from '../../common/image/Image';
 
 const ProductCard = ({id, name, price, img}) => {
 
@@ -16,10 +16,7 @@ const ProductCard = ({id, name, price, img}) => {
     return(
         <div className={styles.product}>
             <div className={styles.imgContainer}>
-                <img
-                    className={styles.img}
-                    alt={name}
-                    src={`${IMG_URL}/${img}`} />
+                <Image name={name} img={img} />
             </div>
             <div className={styles.body}>
                 <div>

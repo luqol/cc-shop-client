@@ -1,4 +1,4 @@
-import HomeForm from "../../features/HomeForm/HomeForm";
+import HomeForm from "../../views/HomeForm/HomeForm";
 import styles from './Home.module.scss';
 
 const Home = () =>{

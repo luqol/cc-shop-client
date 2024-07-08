@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import styles from './HomeForm.module.scss';
 import { getAllProducts } from '../../../redux/productsRedux';
 import { Row, Spinner } from 'react-bootstrap';
-import ProductCard from '../../views/ProductCard/ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 const HomeForm = () => {
 

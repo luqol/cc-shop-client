@@ -1,8 +1,9 @@
+import SpForm from "../../features/SpForm/SpForm";
 
 
-const SingleProduct = () =>{
+const SingleProduct = () => {
     return(
-      <h2>SingleProduct</h2>
+      <SpForm />
     )
   };
   
