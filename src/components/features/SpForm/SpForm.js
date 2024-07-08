@@ -93,6 +93,7 @@ const SpForm = () => {
                     <span className={styles.price}> Total price: {price} $</span>
                 </div>
                 <div className={styles.quantityContainer}>
+                    <span className={styles.quantity} >Quantity: </span>
                     <Quantity plusAction={plus} minusAction={minus} quantity={quantity} />
                 </div>
                 <div className={styles.buttonContainer}>

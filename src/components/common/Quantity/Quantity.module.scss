@@ -2,19 +2,17 @@
 
 
 .quantityContainer{
-    .quantity{
         font-size: 1.5*$base-size;
         .plusminusBtn{
-            background: $color-success;
-            border: 0;
-            color: $color-light;
-            font-weight: 700;
-            border-radius: $radius;
-            transition: $transition;
-            margin: $half-size;
-            &:hover {
-                background: darken($color-success, 10%);
-            }
+        background: $color-success;
+        border: 0;
+        color: $color-light;
+        font-weight: 700;
+        border-radius: $radius;
+        transition: $transition;
+        margin: $half-size;
+        &:hover {
+            background: darken($color-success, 10%);
         }
     }
 }

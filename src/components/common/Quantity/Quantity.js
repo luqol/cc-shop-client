@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 const Quantity = ({plusAction, minusAction, quantity}) => {
     return(
         <div className={styles.quantityContainer}>
-            <span className={styles.quantity} >Quantity: 
-                <button className={styles.plusminusBtn} onClick={minusAction} type='submit'>-</button>
-                {quantity}
-                <button className={styles.plusminusBtn} onClick={plusAction} type='submit'>+</button>
-            </span>
+            <button className={styles.plusminusBtn} onClick={minusAction} type='submit'>-</button>
+            {quantity}
+            <button className={styles.plusminusBtn} onClick={plusAction} type='submit'>+</button>
         </div>
     );
 };
