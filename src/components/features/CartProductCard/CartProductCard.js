@@ -4,6 +4,7 @@ import Quantity from '../../common/Quantity/Quantity';
 import styles from './CartProductCard.module.scss';
 import { useDispatch } from 'react-redux';
 import { deleteProduct, updateQtyProcut } from '../../../redux/cartRedux';
+import PropTypes from 'prop-types';
 
 const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
 
@@ -53,5 +54,14 @@ const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
         </div>
     );
 };
+
+CartProductCard.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    singlePrice: PropTypes.number.isRequired,
+    qty: PropTypes.string.isRequired,
+    sNote: PropTypes.string.isRequired,
+};
+
 
 export default CartProductCard;
