@@ -1,0 +1,21 @@
+@import '../../../styles/settings.scss';
+
+
+.cartForm{
+    text-align: center;
+    .list{
+        flex-direction: column;
+    }
+    
+    .buttonContainer{
+        display: flex;
+        margin-top: auto;
+        justify-content: center;
+    }
+
+    .noProducts{
+        display: block;
+        margin: $base-size;
+    }
+}
+

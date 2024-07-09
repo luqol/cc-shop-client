@@ -6,7 +6,7 @@ import Button from '../../common/Button/Button';
 import { useState} from 'react';
 import Image from '../../common/image/Image';
 import Quantity from '../../common/Quantity/Quantity';
-import { addProduct, getCartProductById, updateProduct } from '../../../redux/cartRedux';
+import { addProduct, getCartProductById, addSameProduct } from '../../../redux/cartRedux';
 
 
 const SpForm = () => {
@@ -52,13 +52,15 @@ const SpForm = () => {
         const newProduct = {
             id: product.id,
             name: product.name,
+            note: '',
             quantity: quantity,
+            price: product.price,
         }
         
         if (!p) 
             dispatch(addProduct(newProduct));
         else {
-            dispatch(updateProduct(newProduct));
+            dispatch(addSameProduct(newProduct));
         }
         navigate('/cart')
     }

@@ -7,7 +7,6 @@ import ProductCard from '../ProductCard/ProductCard';
 const HomeForm = () => {
 
     const allProducts = useSelector( getAllProducts);
-    console.log(allProducts);
 
     return(
         <Row className={styles.list}>
