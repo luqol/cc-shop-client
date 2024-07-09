@@ -9,7 +9,7 @@ const Button = ({children, action}) => {
 
 Button.propTypes = {
     children: PropTypes.node.isRequired,
-    action: PropTypes.func.isRequired,
+    action: PropTypes.func,
 };
 
 export default Button;

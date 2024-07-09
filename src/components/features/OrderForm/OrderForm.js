@@ -91,15 +91,15 @@ const OrderForm = () => {
                 <div className={styles.totalPrice}>
                     <span className={styles.totalPrice}>Total price: {totalPrice()} $</span>
                 </div>
-                <div className={styles.form}>
+                <div className={styles.form} onSubmit={orderHandler}>
                     <form>
                         <div className={styles.formGroup}>
                             <label for='fname'>First name: </label>
-                            <input type='text' id='fname' name='name' value={name} onChange={e => setName(e.target.value)} />
+                            <input type='text' id='fname' name='name' value={name} onChange={e => setName(e.target.value)} minLength={3} maxLength={50}/>
                         </div>
                         <div className={styles.formGroup}>
                             <label for='flastName'>Last name: </label>
-                            <input type='text' id='flastName' name='lastName' value={lastName} onChange={e => setLastName(e.target.value)}/>
+                            <input type='text' id='flastName' name='lastName' value={lastName} onChange={e => setLastName(e.target.value)} minLength={3} maxLength={50}/>
                         </div>
                         <div className={styles.formGroup}>
                             <label for='faddress'>Address: </label>
@@ -116,7 +116,7 @@ const OrderForm = () => {
                         
 
                         <div className={styles.btnContainer}>
-                            <Button action={orderHandler}>Order</Button>
+                            <Button >Order</Button>
                         </div>
                     </form>
                 </div>
