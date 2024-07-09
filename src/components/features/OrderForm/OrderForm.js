@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './OrderForm.module.scss';
-import { clearCart, getCart } from '../../../redux/cartRedux';
+import { clearCartLocal, getCart } from '../../../redux/cartRedux';
 import { Row } from 'react-bootstrap';
 import OrderProductCard from '../../views/OrderProductCard/OrderProductCard';
 import Button from '../../common/Button/Button';
@@ -60,7 +60,7 @@ const OrderForm = () => {
             if (res.ok){
                 const data = await res.json();
                 setStatus(true);
-                dispatch(clearCart([]));
+                dispatch(clearCartLocal());
                 setName('');
                 setLastName('');
                 setAddress('');
@@ -94,27 +94,26 @@ const OrderForm = () => {
                 <div className={styles.form} onSubmit={orderHandler}>
                     <form>
                         <div className={styles.formGroup}>
-                            <label for='fname'>First name: </label>
+                            <label htmlFor='fname'>First name: </label>
                             <input type='text' id='fname' name='name' value={name} onChange={e => setName(e.target.value)} minLength={3} maxLength={50}/>
                         </div>
                         <div className={styles.formGroup}>
-                            <label for='flastName'>Last name: </label>
+                            <label htmlFor='flastName'>Last name: </label>
                             <input type='text' id='flastName' name='lastName' value={lastName} onChange={e => setLastName(e.target.value)} minLength={3} maxLength={50}/>
                         </div>
                         <div className={styles.formGroup}>
-                            <label for='faddress'>Address: </label>
+                            <label htmlFor='faddress'>Address: </label>
                             <input type='text' id='faddress' name='address' value={address} onChange={e => setAddress(e.target.value)}/>
                         </div>
                         <div className={styles.formGroup}>
-                            <label for='fphone'>Phone: </label>
+                            <label htmlFor='fphone'>Phone: </label>
                             <input type='tel' id='fpfone' name='phone' value={phone} onChange={e => setPhone(e.target.value)}/>
                         </div>
                         <div className={styles.formGroup}>
-                            <label for='femail'>Email: </label>
+                            <label htmlFor='femail'>Email: </label>
                             <input type='email' id='femail' name='email' value={email} onChange={e => setEmail(e.target.value)}/>
                         </div>
                         
-
                         <div className={styles.btnContainer}>
                             <Button >Order</Button>
                         </div>

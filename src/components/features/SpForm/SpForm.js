@@ -6,7 +6,7 @@ import Button from '../../common/Button/Button';
 import { useState} from 'react';
 import Image from '../../common/image/Image';
 import Quantity from '../../common/Quantity/Quantity';
-import { addProduct, getCartProductById, addSameProduct } from '../../../redux/cartRedux';
+import {  getCartProductById,  addProductLocal, addSameProductLocal } from '../../../redux/cartRedux';
 
 
 const SpForm = () => {
@@ -58,9 +58,9 @@ const SpForm = () => {
         }
         
         if (!p) 
-            dispatch(addProduct(newProduct));
+            dispatch(addProductLocal(newProduct));
         else {
-            dispatch(addSameProduct(newProduct));
+            dispatch(addSameProductLocal(newProduct));
         }
         navigate('/cart')
     }

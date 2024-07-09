@@ -10,6 +10,7 @@ import OrderPage from './components/pages/OrderPage/OrderPage.js';
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchProducts } from "./redux/productsRedux.js";
+import { updateCartLocal } from "./redux/cartRedux.js";
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
   useEffect( 
     () => {
       dispatch(fetchProducts());
+      dispatch(updateCartLocal());
     }
   ,[dispatch] );
 

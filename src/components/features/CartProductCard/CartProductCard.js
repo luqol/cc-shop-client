@@ -3,7 +3,7 @@ import Button from '../../common/Button/Button';
 import Quantity from '../../common/Quantity/Quantity';
 import styles from './CartProductCard.module.scss';
 import { useDispatch } from 'react-redux';
-import { deleteProduct, updateNoteProduct, updateQtyProcut } from '../../../redux/cartRedux';
+import { deleteProductLocal, updateNoteProductLocal, updateQtyProcutLocal } from '../../../redux/cartRedux';
 import PropTypes from 'prop-types';
 
 const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
@@ -19,7 +19,7 @@ const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
         const newQ = quantity+1;
         setQuantity(newQ);
         setPrice(newQ*singlePrice);
-        dispatch(updateQtyProcut({id: id, quantity: newQ}));
+        dispatch(updateQtyProcutLocal({id: id, quantity: newQ}));
     }  
     const minus = (e) => {
         e.preventDefault();
@@ -30,18 +30,18 @@ const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
         } else{
             setQuantity(newQ);
             setPrice(newQ*singlePrice);
-            dispatch(updateQtyProcut({id: id, quantity: newQ}));
+            dispatch(updateQtyProcutLocal({id: id, quantity: newQ}));
         }
     }
 
     const delHandle = (e) => {
         e.preventDefault();
-        dispatch(deleteProduct(id));
+        dispatch(deleteProductLocal(id));
     }
 
     const noteHandler = (e) => {
         setNote(e.target.value);
-        dispatch(updateNoteProduct({id:id, note:e.target.value}))
+        dispatch(updateNoteProductLocal({id:id, note:e.target.value}))
     }
 
     return (
