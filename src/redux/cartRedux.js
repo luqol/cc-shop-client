@@ -10,6 +10,7 @@ const ADD_PRODUCT = createActionName('ADD_PRODUCT');
 const ADD_SAME_PRODUCT= createActionName('ADD_SAME_PRODUCT');
 const DELETE_PRODUCT = createActionName('DELETE_{PRODUCT');
 const UPDATE_UTY_PRODUCT = createActionName('UPDATE_UTY_PRODUCT');
+const UPDATE_NOTE_PRODUCT = createActionName('UPDATE_NOTE_PRODUCT');
 
 //action creators
 
@@ -17,6 +18,7 @@ export const addProduct = payload => ({type: ADD_PRODUCT, payload});
 export const addSameProduct = payload => ({type:ADD_SAME_PRODUCT, payload});
 export const deleteProduct = payload => ({type: DELETE_PRODUCT, payload});
 export const updateQtyProcut = payload => ({type: UPDATE_UTY_PRODUCT, payload});
+export const updateNoteProduct = payload => ({type: UPDATE_NOTE_PRODUCT, payload});
 
 const cartReducer = (statePart = [], action) => {
 
@@ -32,6 +34,10 @@ const cartReducer = (statePart = [], action) => {
         case UPDATE_UTY_PRODUCT:
             return statePart.map( product => (
                 product.id === action.payload.id ? {...product, quantity: action.payload.quantity}: product
+            ));
+        case UPDATE_NOTE_PRODUCT:
+            return statePart.map( product => (
+                product.id === action.payload.id ? {...product, note: action.payload.note}: product
             ));
         default:
             return statePart;

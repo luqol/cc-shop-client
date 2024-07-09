@@ -3,7 +3,7 @@ import Button from '../../common/Button/Button';
 import Quantity from '../../common/Quantity/Quantity';
 import styles from './CartProductCard.module.scss';
 import { useDispatch } from 'react-redux';
-import { deleteProduct, updateQtyProcut } from '../../../redux/cartRedux';
+import { deleteProduct, updateNoteProduct, updateQtyProcut } from '../../../redux/cartRedux';
 import PropTypes from 'prop-types';
 
 const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
@@ -39,6 +39,11 @@ const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
         dispatch(deleteProduct(id));
     }
 
+    const noteHandler = (e) => {
+        setNote(e.target.value);
+        dispatch(updateNoteProduct({id:id, note:e.target.value}))
+    }
+
     return (
         <div className={styles.cpc}>
             <h2 className={styles.name}>{name}</h2>
@@ -49,7 +54,7 @@ const CartProductCard = ({id, name, sNote, qty, singlePrice}) => {
             </div>
             <div className={styles.noteContainer}>
                 <label>Your note: </label>
-                <textarea placeholder='Comments' value={note}  onChange={e => setNote(e.target.value)} cols={50}/>
+                <textarea placeholder='Comments' value={note}  onChange={noteHandler} cols={50}/>
             </div>
         </div>
     );

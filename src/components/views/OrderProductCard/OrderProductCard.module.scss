@@ -1,0 +1,29 @@
+@import '../../../styles/settings.scss';
+
+div .productContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: $base-size auto;
+    padding: $base-size;
+    border-radius: $radius;
+    color: $color-dark;
+    background-color: $color-light;
+    font-family: $font-text;
+
+    .title{
+        
+    }
+    .price{
+        padding-right: 10px;
+    }
+    .qty{
+        padding-right: 10px;
+        @media  (max-width:600px){
+            display: block;
+        }
+    }
+    .note{
+        display: block;
+    }
+}

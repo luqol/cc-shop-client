@@ -1,8 +1,12 @@
-
+import OrderForm from '../../features/OrderForm/OrderForm';
+import styles from './OrderPage.module.scss';
 
 const OrderPage = () =>{
     return(
-      <h2>OrderPage</h2>
+      <main>
+      <h4 className={styles.title}>Order</h4>
+       <OrderForm />
+    </main>
     )
   };
   

@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.order{
+
+    .list{
+        flex-direction: column;
+    }
+
+    .btnContainer{
+        display: flex;
+        margin-top: auto;
+        justify-content: center;
+    }
+}
